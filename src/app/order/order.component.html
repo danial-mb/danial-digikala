@@ -1,0 +1,62 @@
+<nav class="navbar navbar-light bg-light">
+  <div class="container">
+    <div class="dropdown show">
+      <a
+        class="btn btn-secondary dropdown-toggle"
+        href="#"
+        role="button"
+        id="dropdownMenuLink"
+        data-toggle="dropdown"
+        aria-haspopup="true"
+        aria-expanded="false"
+      >
+        Dropdown link
+      </a>
+
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+        <a
+          class="dropdown-item"
+          href="login"
+          class="nav-link"
+          routerLinkActive="active current"
+          routerLink="/login"
+          >Action</a
+        >
+        <a class="dropdown-item" href="#">Another action</a>
+        <a class="dropdown-item" href="#">Something else here</a>
+      </div>
+    </div>
+  </div>
+</nav>
+<body class="text-end">
+  <div class="container">
+    <div class="row">
+      <div class="col" *ngFor="let order of orders">
+        <div class="card" style="width: 15rem">
+          <div class="col-lg-10">{{ order.number }}</div>
+          <div class="col-lg-10">{{ order.name }}</div>
+          <div class="col-lg-10">
+            <img
+              class="card-img"
+              [src]="order.picture"
+              alt="{{ order.picture }}"
+              width="500px"
+              height="300px"
+              alt="Card image cap"
+            />
+          </div>
+
+          <div class="col-lg-10">
+            {{ order.price }}
+          </div>
+          <div class="col-lg-10">
+            <span class="fa fa-star checked"></span>{{ order.rate }}
+          </div>
+          <div class="col-lg-10">
+            <button class="btn btn danger">ثبت</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>

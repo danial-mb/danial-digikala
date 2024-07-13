@@ -1,0 +1,68 @@
+<body class="text-end" style="border-radius: 50%">
+  <main class="w-100 mw-330 pad2x m-auto">
+    <div class="container mt-10">
+      <form [formGroup]="form" style=" " (ngSubmit)="submit()">
+        <div class="row justify-content-center mt-10">
+          <div class="form-group mt-20% col-lg-3">
+            <img
+              src="https://www.digikala.com/statics/img/svg/logo.svg"
+              style="margin-right: 100px"
+            />
+            <div class="form-group mt-3">
+              <h3>ورود | ثبت نام</h3>
+            </div>
+            <div class="form-group mt-3">
+              <h5 style="font-size: small">سلام!</h5>
+            </div>
+            <div class="form-group mt-3">
+              <h5 style="font-size: small">
+                لطفا شماره موبایل یا ایمیل خود را وارد کنید
+              </h5>
+            </div>
+            <div class="form-group mt-3">
+              <input
+                class="form-control"
+                formControlName="phon"
+                id="phon"
+                type="text"
+              />
+              <div
+                class="alert alert-danger"
+                *ngIf="phon?.touched && phon?.invalid"
+              >
+                <div *ngIf="phon?.errors?.['pattern']">
+                  شماره وارد شده اشتباه است
+                </div>
+                <div *ngIf="phon?.errors?.['confirmEmail']">اشتباه است</div>
+              </div>
+              <div class="form-group mt-50">
+                <div
+                  class="row justify-content-center col-lg-2"
+                  *ngIf="phon?.valid"
+                  class="alert alert-success"
+                >
+                  وارد شد
+                </div>
+              </div>
+              <div class="row form-control-lg mt-3">
+                <button
+                  class="btn btn-danger"
+                  routerLinkActive="active current"
+                  routerLink="/pass"
+                  (click)="submit()"
+                >
+                  ورود
+                </button>
+              </div>
+              <div>
+                <a style="font-size: x-small">ورود شما به معنای پذیرش شرایط </a>
+
+                <a style="font-size: x-small">و قوانین حریم خصوصی است</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </main>
+</body>
